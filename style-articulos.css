@@ -1,0 +1,382 @@
+@charset "utf-8";
+/* CSS Document */
+
+#header {grid-area: header;}
+#menu {grid-area: menue;}
+#description {grid-area: description;}
+
+#elemento-img {grid-area: elemento-img;}
+#elemento-tex {grid-area: elemento-tex;}
+
+#footer {grid-area: footer;}
+
+#tlf {grid-area: tlf;}
+#twitter {grid-area: twitter;}
+#trip {grid-area: trip;}
+#gps {grid-area: gps;}
+#facebook {grid-area: facebook;}
+#instagram {grid-area: instagram;}
+#calle {grid-area: calle;}
+
+    @keyframes fadeIn {
+            0% {
+				font-size: 17px;		
+			}
+            100% {
+				font-size: 20px;
+			}
+     }
+ @keyframes opac {
+            0% {
+				background-color:  rgba(0,0,0,0.00);	 		
+			}
+            100% {
+				background-color:  rgba(0,0,0,0.50);	
+			}
+     }
+ @keyframes clar {
+            0% {
+				background-color:  rgba(255,255,255,0.00);	 		
+			}
+            100% {
+				background-color:  rgba(255,255,255,0.50);	
+			}
+     }
+
+	h2, h3 {
+ 		font-family: Constantia, Lucida Bright, DejaVu Serif, Georgia, serif
+	}
+
+@media screen and (min-width: 480px)  {
+	.container{
+		grid-template-columns: 1fr 1fr ;
+		grid-template-rows: 1fr 0fr 4fr 3fr 3fr;
+		display: grid;
+		grid-template-areas:
+			 ' header header'
+			 ' menue menue'
+			 'description description'
+			 ' elemento-img elemento-tex'
+			 'elemento-img elemento-tex'
+			 'footer footer';
+	}
+	input{
+		background-color: rgba(255,255,255,0.00);
+		border-color: rgba(75,11,18,1.00);
+		border-radius: 25%;
+	}
+	textarea{
+		background-color: rgba(255,255,255,0.00);
+		border-color: rgba(75,11,18,1.00);
+		border-radius: 5%;
+	}
+	.active {
+  		position: relative;
+  		display: inline-block;
+	}
+	.drop {
+		  display: none;
+		  position: absolute;
+		  background-color: #f9f9f9;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  padding: 12px 16px;
+		  z-index: 1;
+	}
+
+	.active:hover .drop {
+		  display: block;
+	}
+	
+		#footer{
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr ;
+		grid-template-rows: 100% ;
+		display: grid;
+		 grid-template-areas:
+			 'tlf twitter trip gps instagram facebook calle';	 
+	}
+	
+	#description:hover{ 
+		background-image:  url(bodegon-vino.jpg) ;
+		background-repeat: no-repeat;
+		color: white;
+		animation-fill-mode: forwards;
+		text-align: center;
+  		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: fadeIn;
+	;}
+	
+	#logo {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+	
+	p{
+		padding-left: 25%;
+		padding-right: 25%;
+	}
+	h2{
+		padding-top: 5%;
+	}
+
+	#description{ 
+		background-image:  url(bodegon-vino.jpg) ;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		color: white;
+		text-align: center;
+	;}
+	
+	#elemento-tex{
+		background-color: rgba(18,20,27,1.00);
+		color: white;
+		text-align: center;
+	}
+	
+	#elemento-img{
+		background-image:  url(tapa.jpg) ;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		color: white;
+		text-align: center;
+	}
+	
+	#elemento-tex:hover, #elemento-img:hover{
+		animation-fill-mode: forwards;
+		text-align: center;
+  		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: fadeIn;
+	}
+	
+	.opac{
+		background-color:  rgba(0,0,0,0.00);
+		background-size:contain;
+  		width: 100%;
+    	height: 100%;
+	}
+	
+	.opac:hover{
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: opac;
+	}
+	.clar{
+		background-color:  rgba(255,255,255,0.00);
+		background-size:contain;
+  		width: 100%;
+    	height: 100%;
+	}
+	
+	.clar:hover{
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: clar;
+	}
+}
+
+@media screen and (max-width: 480px)  {
+	.container{
+		
+		grid-template-rows: 0fr 0fr 1fr 1fr 1fr;
+		display: grid;
+		grid-template-areas:
+			 'header header '
+			 'menue menue '
+			 'description description'
+			 'elemento-img elemento-img'
+			 'elemento-tex elemento-tex'
+			 'footer  footer';	
+	}	
+	input{
+		background-color: rgba(255,255,255,0.00);
+		border-color: rgba(75,11,18,1.00);
+		border-radius: 25%;
+	}
+	textarea{
+		background-color: rgba(255,255,255,0.00);
+		border-color: rgba(75,11,18,1.00);
+		border-radius: 5%;
+	}
+	
+	#footer{
+		grid-template-columns: 1fr 1fr 1fr 1fr  ;
+		grid-template-rows: 1fr 1fr  ;
+		display: grid;
+		grid-template-areas:
+			'tlf tlf tlf tlf tlf'
+			'twitter trip gps instagram facebook '
+			'calle calle calle calle calle';	 
+	}
+	
+	#logo {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+
+
+	
+	 p{
+		padding-left: 25%;
+		padding-right: 25%;
+	}
+	 h2{
+		padding-top: 5%;
+	}
+	
+	#description{ 
+		background-image:  url(bodegon-vino.jpg) ;
+		background-repeat: no-repeat;
+		background-size: auto;
+		color: white;
+		text-align: center;
+	;}
+	
+	#description:hover{ 
+		background-image:  url(bodegon-vino.jpg) ;
+		background-repeat: no-repeat;
+		color: white;	
+		animation-fill-mode: forwards;
+		text-align: center;
+  		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: fadeIn;
+	;}
+	
+	#elemento-tex{
+		background-color: rgba(18,20,27,1.00);
+		color: white;
+		text-align: center;
+	}
+	
+	#elemento-img{
+		background-image:  url(aceite.jpg) ;
+		background-repeat: no-repeat;
+		background-size: auto;
+		color: white;
+		text-align: center;
+	}
+	
+
+	
+	
+	
+	#elemento-tex:hover, #elemento-img:hover{
+		animation-fill-mode: forwards;
+		text-align: center;
+  		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: fadeIn;
+	}
+
+	.opac{
+		background-color:  rgba(0,0,0,0.00);
+		background-size:contain;
+  		width: 100%;
+    	height: 100%;
+	}
+
+	.opac:hover{
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: opac;
+	}
+	
+	.clar{
+		background-color:  rgba(255,255,255,0.00);
+		background-size:contain;
+  		width: 100%;
+    	height: 100%;
+	}
+	
+	.clar:hover{
+		animation-fill-mode: forwards;
+		animation-timing-function: ease-out;
+    	animation-duration: 2s;
+    	animation-delay: 0s;
+    	animation-name: clar;
+	}
+}
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	  background-color: #333;
+	}
+
+	li {
+	  float: left;
+	}
+
+	li a, .dropbtn {
+	  display: inline-block;
+	  color: white;
+	  text-align: center;
+	  padding: 14px 16px;
+	  text-decoration: none;
+	}
+
+	li a:hover, .dropdown:hover .dropbtn {
+	  background-color: rgba(15,15,15,1.00) ;
+	}
+
+	li.dropdown {
+	  display: inline-block;
+	}
+
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+
+	.dropdown-content a {
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	  text-align: left;
+	}
+
+	.dropdown-content a:hover {background-color: #f1f1f1}
+
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+
+	#header {
+		background-color: rgba(0,0,0,1.00);
+		color: white
+	}
+
+	#footer {
+		background-color: #333333;
+		color: white
+	}
+
+	body{ 
+		background-color:  rgba(0,0,0,1.00);	
+	}
+
+
+
+	
